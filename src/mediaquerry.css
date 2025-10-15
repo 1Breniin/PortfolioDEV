@@ -1,0 +1,184 @@
+/* ======= TABLET ======= */
+@media (max-width: 1024px) {
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+  .photo {
+    width: 500px;
+    height: 500px;
+  }
+  
+  /* SOBRE */
+  .sobre-container {
+    flex-direction: row;
+    text-align: center;
+  }
+  .sobre-photo {
+    margin-top: px;
+    max-width: 300px;
+  }
+
+  /* PROJETOS */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* CONTATO */
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form, .contact-info {
+    width: 100%;
+  }
+
+  /* FOOTER */
+  .footer-container {
+    gap: 10px;
+  }
+  footer .socials {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
+/* ======= MOBILE ======= */
+@media (max-width: 768px) {
+
+  /* HEADER */
+  header {
+    padding: 0 15px;
+  }
+  nav {
+    gap: 15px;
+  }
+  nav a {
+    font-size: 16px;
+    padding: 15px;
+  }
+  nav a#breno {
+    font-size: 18px;
+  }
+
+  /* HERO */
+  .hero {
+    gap: 30px;
+  }
+  .photo {
+    width: 250px;
+    height: 250px;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+  .content h2 {
+    font-size: 1.2rem;
+  }
+  .content h3 {
+    font-size: 1rem;
+  }
+  .content .links a {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* SOBRE */
+  .sobre-text h2 {
+    font-size: 2rem;
+  }
+  .sobre-text p {
+    font-size: 1rem;
+  }
+  .skills span {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  /* PROJETOS */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-card img {
+    height: 150px;
+  }
+
+  /* CONTATO */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+
+  /* FOOTER */
+  footer p {
+    font-size: 0.8rem;
+  }
+  footer .socials {
+    gap: 10px;
+  }
+
+  /* CARD FLUTUANTE DE PROJETOS */
+  .project-card-floating {
+    top: 70px;
+    right: 15px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ======= SMALL MOBILE ======= */
+@media (max-width: 480px) {
+
+  /* HERO */
+  .photo {
+    width: 200px;
+    height: 200px;
+  }
+  .content h1 {
+    font-size: 1.5rem;
+  }
+  .content h2 {
+    font-size: 1rem;
+  }
+  .content h3 {
+    font-size: 0.9rem;
+  }
+  .content .links a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+
+  /* SOBRE */
+  .sobre-photo {
+    max-width: 200px;
+  }
+  .sobre-text h2 {
+    font-size: 1.5rem;
+  }
+  .sobre-text p {
+    font-size: 0.9rem;
+  }
+
+  /* PROJETOS */
+  .project-card img {
+    height: 120px;
+  }
+
+  /* CONTATO */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.8rem;
+  }
+  .contact-form button {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
