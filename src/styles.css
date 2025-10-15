@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f6fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: #000000;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-hamburguer .bar {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+}
+
+.menu-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.menu-links a:hover {
+    color: #00aaff;
+}
+
+/* ===== HOME ===== */
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#home .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* cobre a tela sem distorcer */
+}
+
+#home .texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+
+/* ===== MAIN SECTIONS ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    margin: 3rem 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2rem;
+}
+
+section h1 {
+    font-size: 1.7rem;
+    color: #00aaff;
+    margin-bottom: 1rem;
+}
+
+/* ===== PROJETOS ===== */
+#projetos ul {
+    list-style: none;
+    padding-left: 0;
+}
+#projetos li {
+    margin-bottom: 1rem;
+}
+
+/* ===== CONTATO ===== */
+#contato a {
+    color: #00aaff;
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-links {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .menu-links a {
+        margin: 1rem 0;
+    }
+    .menu-hamburguer {
+        display: flex;
+    }
+
+    #home .texto1, 
+    #home .texto2 {
+        font-size: 2.3rem;
+    }
+    #home .negrito {
+        font-size: 1.2rem;
+    }
+}
