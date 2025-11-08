@@ -117,9 +117,9 @@
     <h2>Contato</h2>
     
     <div class="contact-wrapper">
-      <form action="#" class="contact-form">
-        <input type="text" name="nome" placeholder="Seu nome" required>
-        <input type="email" name="email" placeholder="Seu email" required>
+      <form id="contact-form" class="contact-form">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu email" required />
         <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
         <button type="submit">Enviar</button>
       </form>
@@ -132,6 +132,29 @@
       </div>
     </div>
   </div>
+
+  <!-- Script do EmailJS -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("YjWAKIdt2SR40dATZ"); // exemplo: "A1b2C3D4E5F6g7h8i"
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Troque pelos seus IDs do EmailJS
+      emailjs.sendForm("service_0jsdymo", "template_8sgl3t8", this)
+        .then(() => {
+          alert("Mensagem enviada com sucesso!");
+          this.reset();
+        })
+        .catch((error) => {
+          console.error("Erro:", error);
+          alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+        });
+    });
+  </script>
 </section>
 
 <footer>
