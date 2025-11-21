@@ -177,6 +177,7 @@ main {
   100% { transform: translateY(0) rotate(0deg); opacity: 0; }
 }
 
+
 .hero {
   display: flex;
   align-items: center;
@@ -226,6 +227,10 @@ main {
   display: flex;
   gap: 20px;
   padding-top: 20px;
+}
+
+.links a{
+  border-radius: 20px;
 }
 
 .content .links a {
@@ -310,6 +315,11 @@ main {
 }
 
 .projetos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100%;
   padding: 100px 30px;
   background-color: #121212;
@@ -317,6 +327,11 @@ main {
 }
 
 .projetos .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -330,14 +345,22 @@ main {
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
+  padding: 0 20px;
 }
 
 /* CARD DE PROJETO */
 .project-card {
+  width: 350px;
+  height: 400px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--primary-dark);
   border-radius: 20px;
   overflow: hidden;
@@ -349,7 +372,7 @@ main {
 
 .project-card img {
   width: 100%;
-  height: 400px;
+  height: 50%;
   object-fit: cover;
 }
 
@@ -385,7 +408,7 @@ main {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px var(--primary);
 }
 
 .lang {
