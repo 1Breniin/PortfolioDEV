@@ -102,20 +102,20 @@
 
         <div class="project-card">
             <img src="./projeto2.png" alt="Projeto 2">
-            <h3>Lading Page Sneakers</h3>
+            <h3>Landing Page Sneakers</h3>
             <p class="lang"> <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span></p>
             <a href="https://snkrsverse.vercel.app" target="_blank">Ver Projeto</a>
         </div>
         <div class="project-card">
-            <img src="./projeto3.png" alt="Projeto 2">
-            <h3>Lading Page Contemp Service</h3>
+            <img src="./projeto3.png" alt="Projeto 3">
+            <h3>Landing Page Contemp Service</h3>
             <p class="lang"> <span>React.js</span></p>
             <a href="https://contempservice.com.br" target="_blank">Ver Projeto</a>
         </div>
         <div class="project-card">
-            <img src="./projeto4.png" alt="Projeto 2">
+            <img src="./projeto4.png" alt="Projeto 4">
             <h3>Landing Page + Página de links</h3>
             <p class="lang"> <span>React.js</span></p>
             <a href="https://pedrocontemp.vercel.app" target="_blank">Ver Projeto</a>
@@ -138,7 +138,7 @@
 
       <div class="contact-info">
         <h3>Ou me encontre em:</h3>
-        <p>Email: <a href="mailto:brenoesteves243@gmail.com">brenoesteves243@gmail.com</a></p>
+        <p>Email: <a href="mailto:brenoestevesdev@gmail.com">brenoestevesdev@gmail.com</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/breno-esteves722" target="_blank">linkedin.com/in/breno-esteves722</a></p>
         <p>GitHub: <a href="https://github.com/1breniin" target="_blank">github.com/1breniin</a></p>
       </div>
@@ -146,24 +146,42 @@
   </div>
 
   <!-- Script do EmailJS -->
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     (function () {
-      emailjs.init("YjWAKIdt2SR40dATZ"); // exemplo: "A1b2C3D4E5F6g7h8i"
+      emailjs.init({
+        publicKey: "aLL-_mcgcCYWxBvaU"
+      });
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function (event) {
       event.preventDefault();
 
-      // Troque pelos seus IDs do EmailJS
-      emailjs.sendForm("service_0jsdymo", "template_8sgl3t8", this)
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      // Pegando os valores do formulário
+      const templateParams = {
+        name: this.nome.value,
+        email: this.email.value,
+        message: this.mensagem.value,
+        to_name: "Breno Esteves"
+      };
+
+      emailjs.send("service_kv41hjp", "template_jdcpwqv", templateParams)
         .then(() => {
           alert("Mensagem enviada com sucesso!");
           this.reset();
+          btn.textContent = originalText;
+          btn.disabled = false;
         })
         .catch((error) => {
-          console.error("Erro:", error);
-          alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+          console.error("Erro ao enviar:", error);
+          alert("Erro ao enviar: " + (error.text || error.message || "Tente novamente"));
+          btn.textContent = originalText;
+          btn.disabled = false;
         });
     });
   </script>
@@ -176,7 +194,7 @@
     <div class="socials">
       <a href="https://www.linkedin.com/in/breno-esteves722" target="_blank">LinkedIn</a>
       <a href="https://github.com/1breniin" target="_blank">GitHub</a>
-      <a href="mailto:brenoesteves243gmail.com">Email</a>
+      <a href="mailto:brenoestevesdev@gmail.com">Email</a>
     </div>
   </div>
 </footer>
